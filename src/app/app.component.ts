@@ -1,3 +1,4 @@
+import { ThemeService } from 'src/app/services/theme.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    private ThemeSvc: ThemeService,
+  ) {
+    this.ThemeSvc.setInitialTheme()
+  }
 }
